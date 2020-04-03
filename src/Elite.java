@@ -1,11 +1,17 @@
 
 import entities.User;
+import java.io.IOException;
 import java.sql.SQLException;
 import javafx.application.Application;
+import static javafx.application.Application.launch;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import services.UserService;
+import controllers.RegistrationController;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,28 +23,23 @@ import services.UserService;
  *
  * @author abder
  */
-public class Elite {
+public class Elite extends Application {
+@Override
+    public void start(Stage primaryStage) throws IOException {
+        Parent root=FXMLLoader.load(getClass().getResource("gui/Registration.fxml"));
+        Scene scene = new Scene(root);
+
+        primaryStage.setTitle("Menu principal");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+
+    }
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws SQLException {
-        
-        
-  
-         
-        UserService us = new UserService();
-        //us.ModifierUser(u);
-        
-        //us.getUserByEmail("abderrahim.makina@esprit.tn");
-        //us.getUserById(1);
-         //User u = new User( "asmaa", "abir","ffff","admin","gggg","jojojoj");
-       // us.ajouterUser(u);
-
-        System.out.print(  us.getAllUsers() );
-       // ps.ajouterPersonne2(p);
-       // System.out.println(ps.getAllPersonnes());
+    public static void main(String[] args) {
+        launch(args);
     }
 
-    
 }

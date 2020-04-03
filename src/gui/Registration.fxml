@@ -23,7 +23,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="822.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RegistrationController">
     <stylesheets>
-        <URL value="@/edu/cupcake/ressources/registration.css" />
+        <URL value="@gui/registration.css" />
     </stylesheets>
    <children>
       <Separator layoutX="441.0" layoutY="178.0" orientation="VERTICAL" prefHeight="329.0" prefWidth="14.0" />
@@ -144,11 +144,7 @@
             </GridPane>
          </children>
       </VBox>
-      <JFXButton layoutX="315.0" layoutY="522.0" onAction="#ajouterClient" prefHeight="58.0" prefWidth="249.0" style="-fx-background-color: #F39C12;" text="S'inscrire" textFill="WHITE">
-         <font>
-            <Font name="Roboto Medium" size="14.0" />
-         </font>
-      </JFXButton>
+     
       <ImageView fitHeight="40.0" fitWidth="40.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../ressources/images/font-awesome_4-7-0_chevron-left_256_0_e67e22_none.png" />
