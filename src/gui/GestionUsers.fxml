@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="750.0" prefWidth="1157.0" stylesheets="@../gesenfant/Views/login1.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.GestionUsersController">
+   <children>
+      <Label layoutX="14.0" layoutY="148.0" prefHeight="31.0" prefWidth="85.0" styleClass="linear-grad2" stylesheets="@../gesenfant/Views/login1.css" text="First Name" />
+      <Label layoutX="14.0" layoutY="212.0" prefHeight="31.0" prefWidth="85.0" styleClass="linear-grad2" stylesheets="@../gesenfant/Views/login1.css" text="Last Name" />
+      <Label layoutX="14.0" layoutY="277.0" prefHeight="31.0" prefWidth="85.0" styleClass="linear-grad2" text="User Name" />
+      <Label layoutX="14.0" layoutY="344.0" prefHeight="31.0" prefWidth="85.0" styleClass="linear-grad2" stylesheets="@../gesenfant/Views/login1.css" text="Email" />
+      <Label layoutX="14.0" layoutY="413.0" prefHeight="31.0" prefWidth="85.0" styleClass="linear-grad2" stylesheets="@../gesenfant/Views/login1.css" text="Password" />
+      <Label layoutX="14.0" layoutY="485.0" prefHeight="31.0" prefWidth="85.0" styleClass="linear-grad2" stylesheets="@../gesenfant/Views/login1.css" text="Role" />
+      <JFXTextField fx:id="txtNom" layoutX="120.0" layoutY="148.0" promptText="Enter First Name" />
+      <JFXTextField fx:id="txtPrenom" layoutX="120.0" layoutY="212.0" promptText="Enter Last Name" />
+      <JFXTextField fx:id="txtUserName" layoutX="120.0" layoutY="277.0" promptText="Enter User Name" />
+      <JFXTextField fx:id="txtEmail" layoutX="128.0" layoutY="341.0" promptText="Enter Email" />
+      <JFXTextField fx:id="txtPassword" layoutX="120.0" layoutY="406.0" promptText="Enter Password" />
+      <ComboBox fx:id="rolecombo" layoutX="120.0" layoutY="485.0" prefWidth="150.0" promptText="Select Role" styleClass="linear-grad" stylesheets="@../gesenfant/Views/login1.css" />
+      <JFXButton fx:id="ajoutBoutton" layoutX="37.0" layoutY="607.0" onAction="#AjouterUser" prefHeight="31.0" prefWidth="195.0" styleClass="button1" stylesheets="@../gesenfant/Views/login1.css" text="Ajouter " />
+      <TableView fx:id="tableusers" layoutX="304.0" layoutY="82.0" prefHeight="548.0" prefWidth="1022.0" stylesheets="@../gesenfant/Views/login1.css">
+        <columns>
+          <TableColumn fx:id="nom" prefWidth="150.0" text="First Name" />
+          <TableColumn fx:id="prenom" prefWidth="155.0" text="Last Name" />
+            <TableColumn fx:id="password" minWidth="0.0" prefWidth="168.0" text="Password" />
+            <TableColumn fx:id="role" prefWidth="215.0" text="Role" />
+            <TableColumn fx:id="userName" prefWidth="153.0" text="User Name" />
+            <TableColumn fx:id="email" minWidth="0.0" prefWidth="199.0" text="Email" />
+        </columns>
+         <styleClass>
+            <String fx:value="column-header" />
+            <String fx:value="column-header-background" />
+            <String fx:value="table-row-cell" />
+            <String fx:value="table-view" />
+         </styleClass>
+      </TableView>
+      <JFXButton fx:id="modifierBoutton" layoutX="460.0" layoutY="664.0" onAction="#modifierUser" prefHeight="31.0" prefWidth="134.0" styleClass="button1" stylesheets="@../gesenfant/Views/login1.css" text="Modifier" />
+      <JFXButton fx:id="logoutBoutton" layoutX="1038.0" layoutY="23.0" onAction="#logout" prefHeight="31.0" prefWidth="94.0" styleClass="button1" stylesheets="@../gesenfant/Views/login1.css" text="LOG OUT " />
+      <JFXButton fx:id="supprimerBoutton" layoutX="646.0" layoutY="664.0" onAction="#supprimerUser" prefHeight="31.0" prefWidth="120.0" styleClass="button1" stylesheets="@../gesenfant/Views/login1.css" text="supprimer" />
+      <JFXButton fx:id="actualiserBoutton" layoutX="798.0" layoutY="664.0" onAction="#actualiser" prefHeight="31.0" prefWidth="160.0" styleClass="button1" stylesheets="@../gesenfant/Views/login1.css" text="actualiser" />
+      <JFXButton fx:id="resetBoutton" layoutX="37.0" layoutY="664.0" onAction="#reset" prefHeight="31.0" prefWidth="195.0" styleClass="button1" stylesheets="@../gesenfant/Views/login1.css" text="Reset" />
+      <JFXButton fx:id="btnActiver" layoutX="993.0" layoutY="664.0" onAction="#ActiverUser" prefHeight="31.0" prefWidth="120.0" styleClass="button1" stylesheets="@../gesenfant/Views/login1.css" text="Activer" />
+      <JFXButton fx:id="btnDesactiver" layoutX="1143.0" layoutY="664.0" onAction="#DesactiverUser" prefHeight="31.0" prefWidth="134.0" styleClass="button1" stylesheets="@../gesenfant/Views/login1.css" text="Desactiver" />
+      <JFXButton fx:id="saveU" layoutX="306.0" layoutY="664.0" onAction="#saveUpdates" prefHeight="31.0" prefWidth="120.0" styleClass="button1" stylesheets="@../gesenfant/Views/login1.css" text="Save" />
+      <JFXButton fx:id="retourBoutton" layoutX="1153.0" layoutY="23.0" onAction="#retour" prefHeight="31.0" prefWidth="70.0" styleClass="button1" stylesheets="@../gesenfant/Views/login1.css" text="Back" />
+      <JFXTextField fx:id="searchField" layoutX="323.0" layoutY="23.0" prefHeight="31.0" prefWidth="704.0" promptText="Recherche" styleClass="linear-grad2" stylesheets="@../gesenfant/Views/login1.css" />
+      <JFXButton fx:id="homeBoutton" layoutX="1238.0" layoutY="23.0" onAction="#home" prefHeight="31.0" prefWidth="70.0" styleClass="button1" stylesheets="@../gesenfant/Views/login1.css" text="Home" />
+      <ImageView fitHeight="114.0" fitWidth="253.0" layoutX="29.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logo3.png" />
+         </image>
+      </ImageView>
+   </children>
+   <styleClass>
+      <String fx:value="mainFxmlClass" />
+      <String fx:value="column-header" />
+   </styleClass>
+</AnchorPane>

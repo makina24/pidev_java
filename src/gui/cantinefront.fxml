@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="755.0" prefWidth="1157.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.cantinefrontController">
+   <children>
+      <VBox prefHeight="755.0" prefWidth="174.0" style="-fx-background-color: A52A2A;" stylesheets="@../css/club.css">
+         <children>
+            <Label prefHeight="28.0" prefWidth="158.0" style="-fx-text-fill: #FFFFFF;" text="        JARDIN D'ENFANT " />
+            <Label prefHeight="30.0" prefWidth="159.0" style="-fx-text-fill: #FFFFFF;" text="                   ELITE" />
+            <Label prefHeight="168.0" prefWidth="174.0" style="-fx-text-fill: #FFFFFF; -fx-font-size: 22; -fx-graphic-text-gap: 10;" text="  Espace Cantine " />
+            <ImageView fitHeight="112.0" fitWidth="171.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/nosplats.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <ImageView fitHeight="893.0" fitWidth="1127.0" layoutX="173.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/frontcantine.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="nospltasbtn" layoutX="437.0" layoutY="590.0" mnemonicParsing="false" onAction="#nospltasbtn" prefHeight="32.0" prefWidth="113.0" style="-fx-text-fill: #A52A2A;" stylesheets="@../css/Styles.css" text="NOS PLATS" />
+      <Button fx:id="propplatbtn" layoutX="690.0" layoutY="590.0" mnemonicParsing="false" onAction="#propplatbtn" prefHeight="32.0" prefWidth="225.0" style="-fx-text-fill: #A52A2A;" stylesheets="@../css/Styles.css" text="PROPOSER UN PLAT ?" />
+      <JFXButton fx:id="retourBouton" layoutX="1025.0" layoutY="39.0" onAction="#retour" text="retour" />
+   </children>
+</AnchorPane>

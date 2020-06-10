@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="755.0" prefWidth="1157.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeController">
+   <children>
+      <AnchorPane fx:id="menupane" layoutX="-2.0" prefHeight="805.0" prefWidth="379.0" styleClass="linear-grad1" stylesheets="@../gesenfant/Views/login1.css">
+         <children>
+            <ImageView fitHeight="108.0" fitWidth="204.0" layoutX="2.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo3.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="profilebutton" layoutX="83.0" layoutY="236.0" onAction="#Afficherprofile" prefHeight="50.0" prefWidth="155.0" styleClass="button2" text="Profile" />
+            <JFXButton fx:id="msgbutton" layoutX="85.0" layoutY="313.0" onAction="#ShowMsg" prefHeight="50.0" prefWidth="155.0" styleClass="button2" text="Messagerie" />
+            <JFXButton fx:id="deconnectbutton" layoutX="88.0" layoutY="395.0" onAction="#Deconnexion" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: #8B0000;" styleClass="button2" text="Deconnexion" />
+            <JFXButton fx:id="connexiobutton" layoutX="83.0" layoutY="153.0" onAction="#Connexion" prefHeight="56.0" prefWidth="155.0" style="-fx-background-color: #8B0000;" text="Connexion" textFill="WHITE" />
+            <JFXButton fx:id="dashbordBout" layoutX="90.0" layoutY="478.0" onAction="#dashboard" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: #8B0000;" styleClass="button2" text="Dashbooard" />
+            <JFXButton fx:id="paiementBoutton" layoutX="90.0" layoutY="561.0" onAction="#paiement" prefHeight="50.0" prefWidth="155.0" styleClass="button2" text="Paiement" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="68.0" layoutY="652.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/C:/Users/abder/Desktop/butt/images/wwwx.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Text fx:id="connected" layoutX="222.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Connecté en tant que :" wrappingWidth="175.6708984375" />
+      <Text fx:id="NomPrenom" layoutX="229.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom Prenom" wrappingWidth="136.6708984375" />
+      <AnchorPane fx:id="content" layoutX="414.0" layoutY="84.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="707.0" prefWidth="807.0" stylesheets="@../gesenfant/Views/login1.css" AnchorPane.leftAnchor="414.0" AnchorPane.rightAnchor="4.0" />
+      <JFXButton fx:id="retourBoutton" layoutX="1057.0" layoutY="29.0" onAction="#retour" styleClass="button2" stylesheets="@../gesenfant/Views/login1.css" text="Retour" />
+   </children>
+</AnchorPane>

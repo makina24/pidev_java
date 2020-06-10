@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="755.0" prefWidth="1157.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gescluuub.Controller.HomeDemandeController">
+   <children>
+      <VBox prefHeight="755.0" prefWidth="248.0" style="-fx-background-color: #371F57;">
+         <children>
+            <Pane prefHeight="110.0" prefWidth="791.0" style="-fx-background-color: #371F57;" />
+            <Pane prefHeight="98.0" prefWidth="239.0" style="-fx-background-color: #CF4024;">
+               <children>
+                  <Label layoutX="48.0" layoutY="33.0" text="Gestion des Demndes" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#consulter" prefHeight="50.0" prefWidth="240.0" stylesheets="@../css/club.css" text="Consulter les Demandes" textFill="WHITE">
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#statshow" prefHeight="50.0" prefWidth="240.0" stylesheets="@../css/club.css" text="Statistique" textFill="WHITE">
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+         </children>
+      </VBox>
+      <AnchorPane fx:id="rootp" layoutX="248.0" layoutY="98.0" prefHeight="526.0" prefWidth="790.0" />
+      <Pane layoutX="248.0" prefHeight="98.0" prefWidth="909.0" style="-fx-background-color: #CF4024;" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label layoutX="38.0" layoutY="49.0" prefHeight="27.0" prefWidth="271.0" text="Consulter Demande d'adhésion " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="38.0" layoutY="14.0" prefHeight="27.0" prefWidth="347.0" text="Home/Gestion des Demandes" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="retourBouton" layoutX="657.0" layoutY="34.0" onAction="#retour" text="retour" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="755.0" prefWidth="1157.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.cantinebackController">
+   <children>
+      <VBox prefHeight="755.0" prefWidth="196.0" style="-fx-background-color: #A52A2A;">
+         <children>
+            <Label prefHeight="33.0" prefWidth="198.0" style="-fx-text-fill: #FFFFFF;" text="            JARDIN D'ENFANT " />
+            <Label prefHeight="26.0" prefWidth="198.0" style="-fx-text-fill: #FFFFFF;" text="                      ELITE" />
+            <Label prefHeight="227.0" prefWidth="189.0" style="-fx-text-fill: #FFFFFF; -fx-font-size: 30;" text="Espace Admin" />
+         </children>
+      </VBox>
+      <ImageView fitHeight="767.0" fitWidth="1142.0" layoutX="189.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/backadmin1.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="ajouternn" layoutX="306.0" layoutY="50.0" mnemonicParsing="false" onAction="#ajoutbtnnn" prefHeight="70.0" prefWidth="196.0" style="-fx-text-fill: #fff;" stylesheets="@../css/Styles.css" text="AJOUTER UN PLAT" />
+      <Button fx:id="modifiernn" layoutX="607.0" layoutY="50.0" mnemonicParsing="false" onAction="#modifierbtnnn" prefHeight="70.0" prefWidth="276.0" style="-fx-text-fill: #fff;" styleClass="button2" stylesheets="@../css/Styles.css" text="MODIFIER, SUPPRIMER UN PLAT" />
+      <Button fx:id="propnn" layoutX="318.0" layoutY="217.0" mnemonicParsing="false" onAction="#propbtnnn" prefHeight="70.0" prefWidth="196.0" style="-fx-text-fill: #fff;" stylesheets="@../css/Styles.css" text="LES PROPOSITIONS" />
+      <Button fx:id="listeticketnn" layoutX="607.0" layoutY="217.0" mnemonicParsing="false" onAction="#listeticketbtnnn" prefHeight="70.0" prefWidth="269.0" style="-fx-text-fill: #fff;" stylesheets="@../css/Styles.css" text="LISTE DES TICKETS" />
+      <JFXButton fx:id="statBoutton" layoutX="491.0" layoutY="322.0" onAction="#stat" prefHeight="31.0" prefWidth="207.0" text="Nos Stat" textFill="#f8f7f7" />
+      <JFXButton fx:id="retourBouton" layoutX="1043.0" layoutY="27.0" onAction="#retour" text="retour" />
+   </children>
+</AnchorPane>

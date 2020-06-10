@@ -1,133 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import java.net.URL?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXPasswordField?>
-<?import com.jfoenix.controls.JFXTextField?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="755.0" prefWidth="1157.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
     <stylesheets>
         <URL value="@/ressources/login.css" />
     </stylesheets>
    <children>
-      <Separator layoutX="451.0" layoutY="188.0" orientation="VERTICAL" prefHeight="329.0" prefWidth="14.0" />
-      <VBox fx:id="VBoxInfoPersonel" layoutX="58.0" layoutY="160.0" prefHeight="284.0" prefWidth="391.0" spacing="9.0" styleClass="card">
-         <children>
-            <Label styleClass="card-title" text="Inscription" textFill="#595959">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="35.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../ressources/images/font-awesome_4-7-0_info-circle_256_0_e67e22_none.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <VBox.margin>
-                  <Insets left="90.0" />
-               </VBox.margin>
-            </Label>
-            <Separator prefWidth="200.0" />
-            <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Label text="Créer un compte maintenant ">
-               <graphic>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../ressources/images/font-awesome_4-7-0_angle-right_256_0_e67e22_none.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Label>
-           
-           
-           
-         </children>
-      </VBox>
-      <VBox fx:id="VBoxMdp" layoutX="458.0" layoutY="160.0" prefHeight="233.0" prefWidth="369.0" spacing="9.0" styleClass="card">
-         <children>
-            <Label styleClass="card-title" text="Connexion" textFill="#595959">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <VBox.margin>
-                  <Insets left="90.0" />
-               </VBox.margin>
-               <graphic>
-                  <ImageView fitHeight="40.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../ressources/images/font-awesome_4-7-0_lock_256_0_e67e22_none.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Label>
-            <Separator prefWidth="200.0" />
-            <GridPane alignment="CENTER" hgap="2.0" prefHeight="116.0" prefWidth="402.0" vgap="7.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="219.66668701171875" minWidth="10.0" prefWidth="219.66668701171875" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <JFXTextField fx:id="txtUsername" promptText="Nom d'utilisateur" />
-                  <JFXPasswordField fx:id="txtPassword" promptText="Mot de passe" GridPane.rowIndex="1" />
-                  <Label fx:id="txtetat" prefHeight="16.0" prefWidth="231.0" GridPane.rowIndex="2" />
-               </children>
-            </GridPane>
-         </children>
-      </VBox>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+      <JFXTextField fx:id="txtusername" layoutX="370.0" layoutY="154.0" prefHeight="31.0" prefWidth="610.0" promptText="Enter your Username">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="txtpassword" layoutX="370.0" layoutY="244.0" prefHeight="31.0" prefWidth="610.0" promptText="Enter your Password ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXButton fx:id="signupBoutton" layoutX="943.0" layoutY="42.0" onAction="#signUp" prefHeight="45.0" prefWidth="155.0" style="-fx-background-color: #431FA0; -fx-text-fill: #ffffff;" text="Sign Up">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="loginBoutton" layoutX="605.0" layoutY="318.0" onAction="#login" prefHeight="45.0" prefWidth="155.0" style="-fx-background-color: #431FA0; -fx-text-fill: #ffffff;" stylesheets="@login.css" text="Login">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXCheckBox fx:id="rememberme" layoutX="320.0" layoutY="325.0" prefHeight="31.0" prefWidth="155.0" text="Remember me ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXCheckBox>
+      <JFXButton fx:id="forgetpasswordB" layoutX="581.0" layoutY="435.0" onAction="#MissedPassword" prefHeight="32.0" prefWidth="190.0" style="-fx-text-fill: #431FA0; -fx-border-color: #431FA0;" text="Forgot Your Password ?">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="52.0" fitWidth="53.0" layoutX="311.0" layoutY="144.0" pickOnBounds="true" smooth="false">
          <image>
-            <Image url="@../ressources/images/font-awesome_4-7-0_chevron-left_256_0_e67e22_none.png" />
+            <Image url="file:/C:/Users/abder/Desktop/loggouser.jfif" />
          </image>
       </ImageView>
-      <JFXButton fx:id="back" layoutX="50.0" layoutY="30.0" onAction="#Back" prefHeight="40.0" prefWidth="79.0" style="-fx-background-color: #F39C12;" text="Retour" textFill="WHITE">
-         <font>
-            <Font name="Roboto Medium" size="14.0" />
-         </font>
-      </JFXButton>
-      <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="100.0" layoutY="459.0" onAction="#Inscription" prefHeight="58.0" prefWidth="262.0" style="-fx-background-color: #F39C12;" text="S'inscrire" textFill="WHITE">
-         <font>
-            <Font name="Roboto Medium" size="14.0" />
-         </font>
-      </JFXButton>
-      <JFXButton fx:id="connectbutton" layoutX="518.0" layoutY="375.0" onAction="#SeConnecter" prefHeight="58.0" prefWidth="249.0" style="-fx-background-color: #F39C12;" text="Se connecter" textFill="WHITE">
-         <font>
-            <Font name="Roboto Medium" size="14.0" />
-         </font>
-      </JFXButton>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f39c12" height="58.0" layoutX="327.0" layoutY="41.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="249.0" />
-      <Text fill="WHITE" layoutX="365.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Authentification">
-         <font>
-            <Font size="21.0" />
-         </font>
-      </Text>
-     
-      
+      <ImageView fitHeight="52.0" fitWidth="52.0" layoutX="320.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/abder/Desktop/projet%20final/projetfinal/finalprrj/finalprrj/Elite/Elite/src/gui/Cadenas_4_bleu.png" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="txtEmailRecover" layoutX="353.0" layoutY="566.0" promptText="Email" />
+      <JFXButton fx:id="btnsendrecover" layoutX="353.0" layoutY="646.0" onAction="#Recover" prefHeight="31.0" prefWidth="169.0" text="New Password" />
+      <Label fx:id="txtetat" layoutX="36.0" layoutY="18.0" prefHeight="31.0" prefWidth="155.0" />
+      <JFXButton fx:id="facebookButton" layoutX="581.0" layoutY="499.0" onAction="#AuthFB" prefHeight="31.0" prefWidth="190.0" style="-fx-text-fill: #431FA0; -fx-border-color: #431FA0;" text="login with Facebook" />
+      <AnchorPane prefHeight="755.0" prefWidth="303.0" style="-fx-background-color: linear-gradient(to bottom left,#6F4CBB,#431FA0);">
+         <children>
+            <Label fx:id="labelElite" layoutX="4.0" layoutY="11.0" prefHeight="221.0" prefWidth="295.0">
+               <font>
+                  <Font size="31.0" />
+               </font>
+            </Label>
+            <ImageView id="imagev" fitHeight="259.0" fitWidth="282.0" layoutX="11.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@home-banner.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="73.0" fitWidth="221.0" layoutX="74.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo3.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+      <Label fx:id="txtET" layoutX="313.0" layoutY="451.0" prefHeight="33.0" prefWidth="190.0" />
+      <Label layoutX="656.0" layoutY="4.0" onMouseClicked="#closeApplication" prefHeight="31.0" prefWidth="53.0" />
+      <ImageView fx:id="imgProgress" fitHeight="64.0" fitWidth="64.0" layoutX="624.0" layoutY="202.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Desktop/sprint%20java/Bon_paln/src/pidev/bonplan/ressources/img/Preloader_9.gif" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
-

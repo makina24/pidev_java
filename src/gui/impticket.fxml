@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="tickett" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="355.0" prefWidth="458.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.impticketController">
+   <children>
+      <TextArea fx:id="ticket" layoutX="17.0" layoutY="44.0" prefHeight="242.0" prefWidth="432.0" />
+      <Label layoutX="17.0" layoutY="44.0" prefHeight="242.0" prefWidth="98.0" style="-fx-background-color: #900;" text="    ELITE RESTO" textFill="#f9ff0a" />
+      <Label layoutX="113.0" layoutY="45.0" prefHeight="23.0" prefWidth="332.0" text="      Cette ticket ne peut etre acceptée que par notre jardin !" textFill="#ed1111" />
+      <Label layoutX="135.0" layoutY="116.0" prefHeight="29.0" prefWidth="62.0" text="Plat reservé" />
+      <TextField fx:id="txtplat" layoutX="229.0" layoutY="118.0" text="makrouna" />
+      <Label layoutX="135.0" layoutY="157.0" text="Valable pour :" />
+      <TextField fx:id="txtdate" layoutX="229.0" layoutY="153.0" text="2020-02-03" />
+      <AnchorPane layoutY="273.0" prefHeight="200.0" prefWidth="473.0">
+         <children>
+            <Button fx:id="boutonimprimer" layoutX="320.0" layoutY="25.0" mnemonicParsing="false" onAction="#imprimerbtn" prefHeight="29.0" prefWidth="98.0" styleClass="button2" stylesheets="@../gesenfant/Views/login1.css" text="Imprimer" />
+         </children>
+      </AnchorPane>
+      <ImageView fx:id="imgvwGeneratedBarcode" fitHeight="85.0" fitWidth="139.0" layoutX="234.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true" />
+      <JFXButton fx:id="retourBouton" layoutX="12.0" layoutY="11.0" onAction="#retour" prefHeight="31.0" prefWidth="39.0" text="." />
+   </children>
+</AnchorPane>

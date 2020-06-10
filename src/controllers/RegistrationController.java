@@ -5,32 +5,39 @@
  */
 package controllers;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
-import entities.User;
+import entities.Users;
 import java.io.IOException;
 import java.net.URL;
-
+import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javafx.animation.PauseTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
-
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
-import javafx.scene.layout.VBox;
+import javafx.scene.control.ComboBox;
+import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
+import javafx.util.Duration;
 import services.UserService;
+import tray.animations.AnimationType;
+import tray.notification.NotificationType;
+import tray.notification.TrayNotification;
 
 /**
  * FXML Controller class
@@ -38,87 +45,79 @@ import services.UserService;
  * @author abder
  */
 public class RegistrationController implements Initializable {
-   ObservableList<String> RoleList = FXCollections.observableArrayList("ROLE_Client", "ROLE_ADMIN");
+
+        ObservableList<String> RoleList = FXCollections.observableArrayList("ROLE_USER", "ROLE_ADMIN");
 
     @FXML
-    private TextField txtNom;
+    private JFXTextField txtusername;
     @FXML
-    private TextField txtPrenom;
+    private JFXTextField txtnom;
     @FXML
-    private TextField txtEmail;
-    
-    
+    private JFXTextField txtprenom;
     @FXML
-    private JFXPasswordField txtPassword;
+    private JFXTextField txtemail;
     @FXML
-    private JFXTextField txtPseudo;
+    private JFXButton sinscrireboutton;
     @FXML
-    private Button btnInscrire;
+    private ComboBox<String> rolecombo;
+    @FXML
+    private JFXPasswordField txtpassword;
+    @FXML
+    private JFXPasswordField cfpassword;
+    @FXML
+    private JFXButton loginBoutton;
    
-    @FXML
-    private TextField txtAdresse;
-    @FXML
-    private TextField txtCfPassword;
-    @FXML
-    private VBox VBoxInfoPersonel;
-    @FXML
-    private ToggleGroup gender;
-    @FXML
-    private VBox VBoxMdp;
-
-    @FXML
-    private JFXComboBox Rolecombo;
 
     /**
-     * Initializes the controller class.
+     * Initializes the controller class.txtpassword
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-        Rolecombo.setItems(RoleList);
-  
+
+
+
+
        
-    }
-
+          rolecombo.setItems(RoleList);
+           
+                             
+}
+    
     @FXML
-    public void Back(ActionEvent event) throws IOException {
+    public void login(ActionEvent ae2) throws IOException{
+             
+        sinscrireboutton.getScene().getWindow().hide();
         
-
-        Parent root = FXMLLoader(getClass().getResource("/gui/Registration.fxml"));
-     
-        VBoxInfoPersonel.getScene().setRoot(root);
-
+        Stage login = new Stage();
+       Parent root = FXMLLoader.load(getClass().getResource("/gui/Login.fxml"));
+        Scene scene = new Scene(root);
+        login.setScene(scene);
+        login.show();
+        login.setResizable(false);
     }
-
-    public static boolean isInteger(String s) {
-        try {
-            Integer.parseInt(s);
-        } catch (NumberFormatException | NullPointerException e) {
-            return false;
-        }
-
-        return true;
-    }
-
+        
+       
+    
     private boolean validateInputs() {
-        if ((txtNom.getText().isEmpty()) || (txtPrenom.getText().isEmpty())
-                || (txtEmail.getText().isEmpty()) 
-                  || (txtPseudo.getText().isEmpty()) || (txtPassword.getText().isEmpty())
-                ) {
+        if ((txtusername.getText().isEmpty()) || (txtnom.getText().isEmpty())
+                || (txtprenom.getText().isEmpty()) || (txtemail.getText().isEmpty())
+                || (txtpassword.getText().isEmpty())
+                 ) {
             Alert alert1 = new Alert(Alert.AlertType.WARNING);
             alert1.setTitle("Erreur");
             alert1.setContentText("Veillez remplir tout les champs");
             alert1.setHeaderText(null);
             alert1.show();
             return false;
-        } else if (!(txtCfPassword.getText().equals(txtPassword.getText()))) {
+        } else if (!(cfpassword.getText().equals(txtpassword.getText()))) {
             Alert alert2 = new Alert(Alert.AlertType.WARNING);
             alert2.setTitle("Erreur");
             alert2.setContentText("Veillez vérifier votre mot de passe");
             alert2.setHeaderText(null);
             alert2.show();
             return false;
-        } else if (!(validate(txtEmail.getText()))) {
+        } else if (!(validate(txtemail.getText()))) {
             Alert alert2 = new Alert(Alert.AlertType.WARNING);
             alert2.setTitle("Erreur");
             alert2.setContentText("Veillez vérifier votre email");
@@ -136,39 +135,82 @@ public class RegistrationController implements Initializable {
         Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(emailStr);
         return matcher.find();
     }
+    
+    
+    public static boolean isInteger(String s) {
+        try {
+            Integer.parseInt(s);
+        } catch (NumberFormatException | NullPointerException e) {
+            return false;
+        }
 
+        return true;
+    }
+    
     @FXML
-    private void ajouterUser(ActionEvent event) throws SQLException, IOException, InterruptedException {
+    
+    private void signUp (ActionEvent event) throws SQLException, IOException, InterruptedException {
+        
+   
+        
+    
         UserService sr = new UserService();
-        
-        
         //String image = "";
-       
-        if (validateInputs()) {
-           
-            
-               
-           
-            User u = new User(txtPseudo.getText(), txtEmail.getText(), txtPassword.getText(), Rolecombo.getValue().toString(), txtNom.getText(), txtPrenom.getText());
-            UserService us = new UserService();
+     
 
+        //if (radioHomme.isSelected()) {
+           // valueRadio = "Homme";
+       // } else if (radioFemme.isSelected()) {
+         //   valueRadio = "Femme";
+        //}
+
+        if (validateInputs()) {
+            
+            
+
+            
+
+           
+            Users u= new Users(txtusername.getText(), txtemail.getText(), txtpassword.getText(), rolecombo.getValue().toString(), txtnom.getText(), txtprenom.getText());
+            UserService us = new UserService();
+               txtusername.setText("");
+                      
+            String tit = "Inscription réussite";
+            String message = "Bienvenue a Elite Jardin d'enfant !!";
+            NotificationType notification = NotificationType.SUCCESS;
+    
+            TrayNotification tray = new TrayNotification(tit, message, notification);          
+            tray.setAnimationType(AnimationType.POPUP);
+            tray.showAndDismiss(javafx.util.Duration.seconds(2));
+          
+            try{
             sr.ajouterUser(u);
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.getButtonTypes().setAll(ButtonType.YES, ButtonType.NO);
             alert.setContentText("Operation effectuée avec succée !");
             alert.show();
-            alert.setOnHidden(e -> {
-                if (alert.getResult() == ButtonType.YES) {
-                    System.out.println("good");
-                } else {
-                    System.out.println("canceled");
-                }
-            });
+          
+          
+            }catch (SQLException ex){
+                             Logger.getLogger(RegistrationController.class.getName()).log(Level.SEVERE, null, ex);
+
+            }
+       
+
+
+          
+          
+                  
+                   
+          
+                
+                
+           
+           
+             }
 
         }
+
     }
 
-    private Parent FXMLLoader(URL resource) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-}
+

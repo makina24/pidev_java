@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="806.0" prefWidth="1315.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.GestionChauffeursController">
+    <stylesheets>
+        <URL value="@/ressources/gestionchauffeurs.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="33.0" layoutY="54.0" prefHeight="21.0" prefWidth="49.0" text="Nom" />
+      <Label layoutX="33.0" layoutY="93.0" prefHeight="21.0" prefWidth="95.0" text="Prenom" />
+      <Label layoutX="33.0" layoutY="135.0" prefHeight="21.0" prefWidth="95.0" text="NumTel" />
+      <Label layoutX="33.0" layoutY="182.0" prefHeight="21.0" prefWidth="101.0" text="Email" />
+      <Label layoutX="33.0" layoutY="230.0" prefHeight="21.0" prefWidth="101.0" text="Salaire" />
+      <Label layoutX="33.0" layoutY="271.0" prefHeight="21.0" prefWidth="95.0" text="Hire Date" />
+      <Label layoutX="12.0" layoutY="322.0" prefHeight="21.0" prefWidth="143.0" text="Ligne de Transport" />
+      <JFXTextField fx:id="txtNom" layoutX="155.0" layoutY="49.0" />
+      <JFXTextField fx:id="txtPrenom" layoutX="155.0" layoutY="88.0" />
+      <JFXTextField fx:id="txtNumTel" layoutX="155.0" layoutY="130.0" />
+      <JFXTextField fx:id="txtEmail" layoutX="155.0" layoutY="177.0" />
+      <JFXTextField fx:id="txtSalaire" layoutX="155.0" layoutY="225.0" />
+      <JFXDatePicker fx:id="txtHireDate" layoutX="137.0" layoutY="266.0" />
+      <JFXComboBox fx:id="ligneCombo" layoutX="168.0" layoutY="317.0" prefHeight="31.0" prefWidth="143.0" />
+      <JFXButton fx:id="ajouterCBoutton" layoutX="123.0" layoutY="388.0" onAction="#ajouterChauffeur" text="Ajouter" />
+      <TableView fx:id="tableChauffeur" layoutX="353.0" layoutY="61.0" prefHeight="589.0" prefWidth="938.0">
+        <columns>
+          <TableColumn fx:id="nomColumn" prefWidth="149.0" text="Nom" />
+          <TableColumn fx:id="PrenomColumn" prefWidth="127.0" text="Prenom" />
+            <TableColumn fx:id="numTelColumn" minWidth="0.0" prefWidth="164.0" text="Num Tel" />
+            <TableColumn fx:id="emailColumn" prefWidth="179.0" text="Email " />
+            <TableColumn fx:id="salaireColumn" prefWidth="75.0" text="Salaire" />
+            <TableColumn fx:id="hireDateColumn" prefWidth="168.0" text="HIre Date" />
+            <TableColumn fx:id="ligneColumn" prefWidth="73.0" text="Ligne T" />
+        </columns>
+      </TableView>
+      <JFXTextField fx:id="searchField" layoutX="443.0" layoutY="14.0" prefHeight="31.0" prefWidth="534.0" promptText="rechercher" />
+      <JFXButton fx:id="resetBoutton" layoutX="125.0" layoutY="441.0" onAction="#reset" text="Reset" />
+      <JFXButton fx:id="saveBoutton" layoutX="503.0" layoutY="687.0" onAction="#save" text="Save " />
+      <JFXButton fx:id="supprimerBoutton" layoutX="671.0" layoutY="694.0" onAction="#supprimerChauffeur" text="Supprimer" />
+      <JFXButton fx:id="modifierBoutton" layoutX="822.0" layoutY="694.0" onAction="#modifierChauffeur" text="Modifier" />
+      <JFXButton fx:id="actualiserBoutton" layoutX="945.0" layoutY="687.0" onAction="#actualiser" text="Actualiser" />
+      <JFXButton fx:id="backBoutton" layoutX="1192.0" layoutY="14.0" onAction="#back" text="Back" />
+   </children>
+</AnchorPane>

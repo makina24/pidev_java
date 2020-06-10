@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" fx:id="test" prefHeight="632.0" prefWidth="875.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ResponseController">
+    <stylesheets>
+        <URL value="@/ressources/response.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="290.0" layoutY="73.0" prefHeight="42.0" prefWidth="73.0" styleClass="linear-grad2" stylesheets="@../gesenfant/Views/login1.css" text="Objet" />
+      <Label layoutX="290.0" layoutY="207.0" prefHeight="42.0" prefWidth="73.0" styleClass="linear-grad2" stylesheets="@../gesenfant/Views/login1.css" text="Contenu" />
+      <Label layoutX="290.0" layoutY="367.0" prefHeight="42.0" prefWidth="73.0" styleClass="linear-grad2" stylesheets="@../gesenfant/Views/login1.css" text="Reponse" />
+      <JFXTextArea fx:id="newcontent" layoutX="363.0" layoutY="285.0" prefHeight="115.0" prefWidth="457.0" />
+      <JFXButton fx:id="ResponseId" layoutX="574.0" layoutY="473.0" onAction="#Response" prefHeight="42.0" prefWidth="85.0" styleClass="button2" stylesheets="@../gesenfant/Views/login1.css" text="Repondre" />
+      <JFXTextArea fx:id="BodyId" layoutX="379.0" layoutY="145.0" prefHeight="83.0" prefWidth="441.0" />
+      <JFXTextArea fx:id="SubjectId" layoutX="446.0" layoutY="38.0" prefHeight="69.0" prefWidth="341.0" />
+      <AnchorPane layoutX="-2.0" prefHeight="636.0" prefWidth="270.0" styleClass="linear-grad2" stylesheets="@../gesenfant/Views/login1.css">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="26.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/C:/Users/abder/Desktop/butt/images/wwwx.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

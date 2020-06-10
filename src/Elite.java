@@ -1,5 +1,5 @@
 
-import entities.User;
+import entities.Users;
 import java.io.IOException;
 import java.sql.SQLException;
 import javafx.application.Application;
@@ -11,34 +11,43 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import services.UserService;
+import controllers.LoginController;
 import controllers.RegistrationController;
+import entities.Chauffeur;
+import javafx.scene.Cursor;
+import javafx.scene.input.MouseButton;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.paint.Color;
+import javafx.stage.Screen;
+import javafx.stage.StageStyle;
+import services.ChauffeurService;
+import services.MsgServices;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author abder
- */
 public class Elite extends Application {
-@Override
+
+    @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root=FXMLLoader.load(getClass().getResource("gui/Registration.fxml"));
+
+        Parent root = FXMLLoader.load(getClass().getResource("gui/Login.fxml"));
         Scene scene = new Scene(root);
 
-        primaryStage.setTitle("Menu principal");
+        primaryStage.setTitle("Welcome To Elite ");
         primaryStage.setScene(scene);
+        primaryStage.setResizable(true);
+        primaryStage.sizeToScene();
         primaryStage.show();
-
     }
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
+
+        ChauffeurService sc = new ChauffeurService();
+
+        //Chauffeur c = new Chauffeur("adrian","bomaye","21564755","adrian@esprit.tn","545","2020-02-01","49");
+        //      sc.ajouterChauffeur(c);
+        //sc.SupprimerChauffeur(8);
         launch(args);
     }
 

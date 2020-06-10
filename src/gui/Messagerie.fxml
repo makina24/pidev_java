@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import java.net.URL?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" prefHeight="540.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MessagerieController">
+    <stylesheets>
+        <URL value="@/ressources/messagerie.css" />
+    </stylesheets>
+   <children>
+      <JFXButton fx:id="NewButton" layoutX="49.0" layoutY="55.0" onAction="#New" prefHeight="31.0" prefWidth="175.0" styleClass="button2" stylesheets="@../gesenfant/Views/login1.css" text="Nouveu Message" />
+      <JFXButton fx:id="sendButton" layoutX="236.0" layoutY="55.0" onAction="#sended" prefHeight="31.0" prefWidth="151.0" styleClass="button2" stylesheets="@../gesenfant/Views/login1.css" text="Envoyés" />
+      <JFXButton fx:id="ReceiveButton" layoutX="409.0" layoutY="55.0" onAction="#Receive" prefHeight="31.0" prefWidth="151.0" styleClass="button2" stylesheets="@../gesenfant/Views/login1.css" text="Boite de reception" />
+      <Pane fx:id="content2" layoutX="15.0" layoutY="113.0" prefHeight="317.0" prefWidth="528.0">
+         <children>
+            <JFXListView fx:id="listmsg" layoutX="22.0" layoutY="21.0" onMouseClicked="#test" prefHeight="234.0" prefWidth="499.0" styleClass="linear-grad2" stylesheets="@../gesenfant/Views/login1.css" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

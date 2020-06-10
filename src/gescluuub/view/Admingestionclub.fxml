@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="755.0" prefWidth="1157.0" style="-fx-background-color: #371F57;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gescluuub.Controller.AdmingestionclubController">
+   <children>
+      <AnchorPane layoutX="-1.0" prefHeight="755.0" prefWidth="228.0" style="-fx-background-color: #50468C;">
+         <children>
+            <Pane layoutY="81.0" prefHeight="52.0" prefWidth="228.0" style="-fx-background-color: #CF4024; -fx-background-radius: 20;">
+               <children>
+                  <Label layoutX="55.0" layoutY="13.0" text="Gestion des Clubs" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#gobacka" prefHeight="19.0" prefWidth="137.0" style="-fx-border-radius: 30;" styleClass="button1" stylesheets="@../css/club.css" text="Go back" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <Pane layoutX="227.0" prefHeight="568.0" prefWidth="632.0">
+         <children>
+            <Pane layoutX="-19.0" layoutY="-67.0" prefHeight="275.0" prefWidth="547.0" rotate="45.0" style="-fx-background-color: #CF4024; -fx-background-radius: 70;" />
+            <Button layoutX="161.0" layoutY="303.0" mnemonicParsing="false" onAction="#gestionclub" prefHeight="165.0" prefWidth="175.0" stylesheets="@../css/club.css" />
+            <Circle fill="DODGERBLUE" layoutX="244.0" layoutY="377.0" radius="55.0" stroke="BLACK" strokeType="INSIDE" />
+            <ImageView fitHeight="65.0" fitWidth="60.0" layoutX="214.0" layoutY="347.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icon2.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="393.0" layoutY="303.0" mnemonicParsing="false" onAction="#demandes" prefHeight="165.0" prefWidth="175.0" stylesheets="@../css/club.css" />
+            <Circle fill="DODGERBLUE" layoutX="481.0" layoutY="377.0" radius="55.0" stroke="BLACK" strokeType="INSIDE" />
+            <ImageView fitHeight="65.0" fitWidth="60.0" layoutX="451.0" layoutY="347.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icon3.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="194.0" layoutY="432.0" text="Gestion des Clubs" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="415.0" layoutY="432.0" text="Gestion des Demandes" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

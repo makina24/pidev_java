@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="562.0" prefWidth="825.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PaiementController">
+    <stylesheets>
+        <URL value="@/ressources/paiement.css" />
+    </stylesheets>
+   <children>
+      <VBox layoutX="314.0" layoutY="16.0" prefHeight="469.0" prefWidth="470.0">
+         <children>
+            <JFXTextField fx:id="email" prefHeight="71.0" prefWidth="744.0" promptText="Votre email" unFocusColor="#d32323" />
+            <JFXTextField fx:id="numeroCarte" prefHeight="79.0" prefWidth="744.0" promptText="Numero de carte bancaire " unFocusColor="#b91b1b" />
+            <JFXTextField fx:id="montant" prefHeight="63.0" prefWidth="744.0" promptText="Montant a payer " unFocusColor="#d31616" />
+            <JFXTextField fx:id="MoisValidite" focusColor="#c59f54" prefHeight="58.0" prefWidth="600.0" promptText="MM" unFocusColor="#d31b1b" />
+            <JFXTextField fx:id="AnneeValidite" focusColor="#c59f54" prefHeight="58.0" prefWidth="600.0" promptText="YY" unFocusColor="#d71515" />
+            <JFXPasswordField fx:id="ccvTextField" prefHeight="58.0" prefWidth="600.0" promptText="CCV" unFocusColor="#da0d0d">
+               <padding>
+                  <Insets left="5.0" right="20.0" />
+               </padding>
+            </JFXPasswordField>
+            <JFXButton fx:id="btnValider" onAction="#validerFunction" prefHeight="60.0" prefWidth="750.0" styleClass="button2" stylesheets="@../gesenfant/Views/login1.css" text="Valider">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnAnnuler" onAction="#AnnulerFunction" prefHeight="60.0" prefWidth="759.0" styleClass="linear-grad1" stylesheets="@../gesenfant/Views/login1.css" text="Annuler">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </VBox>
+      <AnchorPane layoutX="-4.0" prefHeight="566.0" prefWidth="284.0" styleClass="linear-grad2" stylesheets="@../gesenfant/Views/login1.css">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="26.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/C:/Users/abder/Desktop/butt/images/wwwx.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="6.0" layoutY="195.0" prefHeight="166.0" prefWidth="301.0" text="Espace  paiement" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="34.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="retourBouton" layoutX="213.0" layoutY="14.0" onAction="#retour" styleClass="button2" stylesheets="@../gesenfant/Views/login1.css" text="Retour" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

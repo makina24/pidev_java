@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="755.0" prefWidth="1157.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.listeTicketbackController">
+   <children>
+      <TableView fx:id="tableaut" layoutX="356.0" layoutY="84.0" prefHeight="385.0" prefWidth="503.0">
+        <columns>
+          <TableColumn fx:id="nomt" prefWidth="165.0" text="nom plat" />
+          <TableColumn fx:id="datet" prefWidth="183.0" text="date" />
+            <TableColumn fx:id="idt" prefWidth="152.0" text="id" />
+        </columns>
+      </TableView>
+      <Button fx:id="boutonsupprimer" layoutX="691.0" layoutY="532.0" mnemonicParsing="false" onAction="#spprimert" text="Supprimer" />
+      <Button fx:id="boutonpdf" layoutX="435.0" layoutY="532.0" mnemonicParsing="false" onAction="#pdfp" text="Convertir en pdf" />
+      <VBox layoutX="-1.0" prefHeight="755.0" prefWidth="188.0" style="-fx-background-color: #A52A2A;">
+         <children>
+            <Button fx:id="acceuilbtn" mnemonicParsing="false" onAction="#acceuilbtn" prefHeight="90.0" prefWidth="141.0" style="-fx-text-fill: #FFFFFF; -fx-font-size: 15;" stylesheets="@../css/Styles.css" text="Acceuil" />
+            <Button fx:id="ajoutplat" mnemonicParsing="false" onAction="#ajouterplatbtn" prefHeight="81.0" prefWidth="169.0" style="-fx-text-fill: #FFFFFF; -fx-font-size: 15;" stylesheets="@../css/Styles.css" text="Ajouter un plat" />
+            <Button fx:id="mdfsuppbtn" mnemonicParsing="false" onAction="#mdfsuppbtn" prefHeight="90.0" prefWidth="141.0" style="-fx-text-fill: #FFFFFF; -fx-font-size: 15;" stylesheets="@../css/Styles.css" text="Modifier et supprimer un plat" />
+            <Button fx:id="propo" mnemonicParsing="false" onAction="#propobtn" prefHeight="90.0" prefWidth="158.0" style="-fx-text-fill: #FFFFFF; -fx-font-size: 15;" stylesheets="@../css/Styles.css" text="Propositions" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

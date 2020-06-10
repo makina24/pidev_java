@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="519.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.updateController">
+   <children>
+      <Label layoutX="29.0" layoutY="48.0" text="Nom plat" />
+      <Label layoutX="42.0" layoutY="100.0" text="Date" />
+      <Label layoutX="24.0" layoutY="178.0" text="Description" />
+      <TextField fx:id="txtNom" layoutX="137.0" layoutY="44.0" />
+      <TextField fx:id="txtDescription" layoutX="137.0" layoutY="142.0" prefHeight="107.0" prefWidth="149.0" />
+      <Button fx:id="modifierBoutton" layoutX="401.0" layoutY="265.0" mnemonicParsing="false" onAction="#modifierP" prefHeight="32.0" prefWidth="72.0" text="Modifier" />
+      <Button fx:id="boutonretour" layoutX="19.0" layoutY="456.0" mnemonicParsing="false" onAction="#retourP" prefHeight="32.0" prefWidth="72.0" text="Retour" />
+      <Button fx:id="boutonrechercher" layoutX="437.0" layoutY="460.0" mnemonicParsing="false" onAction="#rechercherp" text="Rechercher" />
+      <TextField fx:id="datep" layoutX="137.0" layoutY="96.0" />
+      <Label layoutX="26.0" layoutY="311.0" text="Photo plat" />
+      <ImageView fx:id="photoview" fitHeight="95.0" fitWidth="122.0" layoutX="148.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="importerbouton" layoutX="160.0" layoutY="265.0" mnemonicParsing="false" onAction="#importerbouton" prefHeight="32.0" prefWidth="98.0" text="Importer photo" />
+      <TextField fx:id="txtrecherche" layoutX="349.0" layoutY="421.0" prefHeight="25.0" prefWidth="162.0" />
+   </children>
+</AnchorPane>

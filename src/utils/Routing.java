@@ -10,6 +10,9 @@ package utils;
  * @author abder
  */
 public class Routing {
+   
+    
+    public static String ConvertView = "/edu/cupcake/gui/Convert.fxml";
     
     
       

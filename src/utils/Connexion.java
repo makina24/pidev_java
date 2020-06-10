@@ -16,7 +16,7 @@ import java.util.logging.Logger;
  * @author berrahal
  */
 public class Connexion {
-      private final String url="jdbc:mysql://127.0.0.1:3306/jardinEnfant";
+      private final String url="jdbc:mysql://127.0.0.1:3306/elite";
     private final String user="root";
     private final String password="";
     private Connection connection;
